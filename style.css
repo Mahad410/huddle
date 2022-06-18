@@ -1,0 +1,180 @@
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+         :root {
+            --white: #fff;
+            --violet: hsl(257, 40%, 49%);
+            --SoftMagenta: hsl(300, 69%, 71%);
+        }
+        
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        main {
+            width: 100%;
+            min-height: 100vh;
+            background-image: url(/bg-desktop.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: var(--violet);
+            overflow: hidden;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            place-items: center;
+            width: 100%;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        
+        .first img:nth-child(1) {
+            width: 200px;
+            height: auto;
+        }
+        
+        .first img:nth-child(2) {
+            width: 650px;
+            height: auto;
+        }
+        
+        .first,
+        .second {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            box-sizing: border-box;
+            padding: 40px 0;
+        }
+        
+        .first {
+            justify-content: space-evenly;
+            padding-left: 60px;
+        }
+        
+        .second {
+            justify-content: space-evenly;
+            color: var(--white);
+            padding-right: 60px;
+        }
+        
+        .second h1 {
+            line-height: auto;
+            font-size: 2.5rem;
+            font-family: 'Poppins', sans-serif;
+            text-transform: capitalize;
+        }
+        
+        .second p {
+            padding: 20px 0;
+            font-size: 1.1rem;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .btn {
+            width: max-content;
+            padding: 15px 50px;
+            border-radius: 28px;
+            border: none;
+            color: var(--violet);
+            font-size: 1rem;
+            font-weight: 400;
+            cursor: pointer;
+            box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.45);
+            -webkit-box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.45);
+            -moz-box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.45);
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+        }
+        
+        .btn:hover {
+            background-color: var(--SoftMagenta);
+            color: var(--white);
+            box-shadow: none;
+            transition: all 300ms ease-in-out;
+        }
+        
+        .block {
+            align-self: flex-end !important;
+        }
+        
+        .block i {
+            font-size: 25px;
+            width: 25px;
+            height: 25px;
+            margin: 0 5px;
+            text-align: center;
+            padding: 16px;
+            border-radius: 50%;
+            cursor: pointer;
+            color: var(--Blue);
+            border: 2px solid var(--white);
+            border-radius: 50%;
+        }
+        
+        .block i:hover {
+            color: var(--SoftMagenta);
+            border: 2px solid var(--SoftMagenta);
+            transition: all 300ms ease-in-out;
+        }
+        
+        @media screen and (max-width:900px) {
+            .grid {
+                display: block;
+                text-align: center;
+                padding: 0 40px;
+            }
+            .first img:nth-child(1) {
+                width: 250px;
+            }
+            .first img:nth-child(2) {
+                width: 100%;
+            }
+            .first {
+                min-height: 100vh;
+                padding: 0px;
+                justify-content: space-around;
+            }
+            .second {
+                min-height: 100vh;
+                padding: 0px;
+                justify-content: space-evenly;
+            }
+            .block {
+                align-self: center !important;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+        
+        @media screen and (max-width:480px) {
+            main {
+                background-image: url(/bg-mobile.svg);
+            }
+            .grid {
+                padding: 0 20px;
+            }
+            .first img:nth-child(1) {
+                width: 150px;
+                padding: 30px 0;
+                float: left;
+            }
+            .first {
+                min-height: max-content;
+                padding: 0px;
+                justify-content: flex-start;
+            }
+            .second h1 {
+                font-size: 2rem;
+            }
+            .second p {
+                font-size: 1rem;
+            }
+            .block {
+                margin: 30px auto 0;
+            }
+        }
